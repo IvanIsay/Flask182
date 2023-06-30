@@ -21,7 +21,7 @@
 
     <br>
     <br>
-   <center> <h1>Gestion de Albums</h1> </center> 
+   <center> <h1>Gestion de Albums</h1>  
     <br>
     <form action="/guardar" method="POST">
 
@@ -32,7 +32,41 @@
         <button type="submit"> Guardar </button>
 
     </form>
-    
+  </center>
+
+    <br>
+    <br>
+    <h2>Albums Guardados</h2>
+    <br>
+    <table>
+      <thead>
+        <tr>
+          <td>Id:</td>
+          <td>Nombre:</td>
+          <td>Artista:</td>
+          <td>Año de publicacion:</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        {%for alb in listAlbums %}
+          <tr>
+            <td>{{ alb.0 }}</td>
+            <td>{{ alb.1 }}</td>
+            <td>{{ alb.2 }}</td>
+            <td>{{ alb.3 }}</td>
+            <td>
+              <a href="#"> Editar </a>
+              <a href="#"> Eliminar </a>
+            </td>
+          </tr>
+        {%endfor %}
+      </tbody>
+
+    </table>
+
+
+
 </body>
 
 </html>
